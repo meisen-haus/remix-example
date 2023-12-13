@@ -1,0 +1,8 @@
+- distributed tracing using MetaHelper
+- issues related to this method when Remix does "soft navigation"
+- root.tsx configured incorrectly - need to export the root wrapped with withSentry
+- Replays will never show the initial http.server transaction in the trace view because this transaction cannot have a replayID (session replay is not active)
+
+Related GitHub issues:
+- https://github.com/getsentry/sentry-javascript/issues/9820
+- https://github.com/getsentry/sentry-javascript/issues/9756

@@ -1,6 +1,16 @@
 import type {LoaderFunction, MetaFunction} from "@remix-run/node";
 import {useLoaderData} from "react-router";
+import * as Sentry from "@sentry/remix";
 import { Link } from "@remix-run/react";
+
+
+
+// export const meta: MetaFunction = () => {
+//   return [
+//     { title: "New Remix App" },
+//     { name: "description", content: "Welcome to Remix!" },
+//   ];
+// };
 
 export const loader : LoaderFunction = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos')
@@ -12,13 +22,13 @@ export const loader : LoaderFunction = async () => {
   };
 }
 
-export default function Index() {
+export default function Dashboard() {
   
   const data = useLoaderData()
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-          <Link to="/dashboard">Dashboard</Link>;
+      <h1>Welcome to Dashboard</h1>
+      <Link to="/">Index</Link>;
       <ul>
         <li>
           <a
